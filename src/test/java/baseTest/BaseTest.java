@@ -6,10 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pages.BooksPage;
-import pages.HomePage;
-import pages.LoginPageInBookStore;
-import pages.ProfilePage;
+import pages.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -20,6 +17,7 @@ protected HomePage homePage;
 protected LoginPageInBookStore loginPageInBookStore;
 protected ProfilePage profilePage;
 protected BooksPage booksPage;
+protected ElementsPage elementsPage;
     @Before
     public void setUp(){
         WebDriverManager.chromedriver().setup();
@@ -31,6 +29,7 @@ protected BooksPage booksPage;
     loginPageInBookStore = new LoginPageInBookStore(webDriver);
     profilePage = new ProfilePage(webDriver);
     booksPage = new BooksPage(webDriver);
+    elementsPage = new ElementsPage(webDriver);
     }
     @After
     public void tearDown(){

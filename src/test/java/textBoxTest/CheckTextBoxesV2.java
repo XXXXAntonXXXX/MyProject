@@ -7,6 +7,8 @@ public class CheckTextBoxesV2 extends BaseTest {
     @Test
     public void enterTextInFieldsCorrectValues(){
 homePage.openHomePage();
+homePage.clickOnButtonElements();
+elementsPage.clickButtonTextBox();
 loginPageInBookStore.enterLoginIntoUserNameField("tosh12345678TOSH!");
 loginPageInBookStore.enterPasswordInToPasswordField("tosh12345678TOSH!");
 loginPageInBookStore.clickOnButtonLogin();
