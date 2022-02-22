@@ -3,15 +3,15 @@ package testLoginInBookStore;
 import baseTest.BaseTest;
 import org.junit.Test;
 
-public class LoginTest extends BaseTest {
+public class InValidLoginTestInBookStore extends BaseTest {
     @Test
-    public void loginInBookStore(){
+    public void invalidLogin(){
         homePage.openHomePage();
         homePage.clickOnButtonBookStoreApplication();
         booksPage.checkIsButtonLoginIsDisplayed();
         booksPage.clickOnButtonLogin();
         loginPageInBookStore.checkTransitionToLoginPageInBookStore()
-                            .loginWithValidCredOnBookStore()
-                            .checkIsButtonLogOutIsDisplayed();
-  }
+                .loginWithInValidCredOnBookStore();
+        loginPageInBookStore.checkErrorMessage();
+    }
 }

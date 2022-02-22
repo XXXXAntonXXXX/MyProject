@@ -8,10 +8,15 @@ public class CheckTextBoxesV2 extends BaseTest {
     public void enterTextInFieldsCorrectValues(){
 homePage.openHomePage();
 homePage.clickOnButtonElements();
+elementsPage.checkIsButtonTextBoxVisible();
 elementsPage.clickButtonTextBox();
-loginPageInBookStore.enterLoginIntoUserNameField("tosh12345678TOSH!");
-loginPageInBookStore.enterPasswordInToPasswordField("tosh12345678TOSH!");
-loginPageInBookStore.clickOnButtonLogin();
+textBoxPage.checkIsButtonSubmitDisplayed();
+textBoxPage.enterTextInToFieldFullName();
+textBoxPage.enterTextInToFieldEmail();
+textBoxPage.enterTextInToFieldCurrentAddress();
+textBoxPage.enterTextInToFieldPermanentAddress();
+textBoxPage.clickOnButtonSubmit();
+textBoxPage.checkCorrectTextName();
     }
 
 }

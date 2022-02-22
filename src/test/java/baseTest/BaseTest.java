@@ -18,18 +18,21 @@ protected LoginPageInBookStore loginPageInBookStore;
 protected ProfilePage profilePage;
 protected BooksPage booksPage;
 protected ElementsPage elementsPage;
+protected TextBoxPage textBoxPage;
     @Before
     public void setUp(){
         WebDriverManager.chromedriver().setup();
         webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
     logger.info("browser was opened");
     homePage = new HomePage(webDriver);
     loginPageInBookStore = new LoginPageInBookStore(webDriver);
     profilePage = new ProfilePage(webDriver);
     booksPage = new BooksPage(webDriver);
     elementsPage = new ElementsPage(webDriver);
+    textBoxPage = new TextBoxPage(webDriver);
     }
     @After
     public void tearDown(){
