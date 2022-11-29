@@ -4,6 +4,7 @@ package pages;
 
 
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
@@ -30,7 +31,10 @@ logger.info("Home page was opened");
 }
 
 public void clickOnButtonBookStoreApplication(){
-      waitElementToBeHide();
+    JavascriptExecutor js = (JavascriptExecutor) webDriver;
+            js.executeScript("arguments[0].scrollIntoView();", buttonBookStoreApplication);
+
+        //waitElementToBeHide();
     clickOnElement(buttonBookStoreApplication);
 }
 protected void waitElementToBeHide(){
@@ -44,4 +48,14 @@ protected void waitElementToBeHide(){
     public void clickOnButtonElements(){
         clickOnElement(buttonElements);
     }
+
 }
+//      protected void scrollDownUntilElementDisplayed(WebElement webElement) {
+//        try {
+//            JavascriptExecutor js = (JavascriptExecutor) webDriver;
+//            js.executeScript("arguments[0].scrollIntoView();", webElement);
+//            //  WebDriverWait webDriverWait10 = this.webDriverWait10;
+//            logger.info("Scrolled down to the element " + webElement);
+//        } catch (Exception e) {
+//            printErrorAndStopTest(e);
+//        }
